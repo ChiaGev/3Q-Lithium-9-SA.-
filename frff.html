@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordle</title>
     <style>
         div, h1, span, p {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Courier New', monospace;
         }
         body {
             display: flex;
             flex-direction: column;
-            background-color: #5d6d7e;
+            background-color: #0f6850;
             align-items: center;
+            border: 60px solid transparent;
         }
         h1 {
+            font-size: 60px;
             text-align: center;
+            padding: 15px 30px;
+            border: 5px solid black; 
+            display: inline-block; 
+            border-radius: 10px; 
+            background-color: white; 
         }
         .box {
             display: flex;
@@ -24,15 +29,15 @@
             margin-top: 10px;
         }
         .box > div {
-            width: 50px;
-            height: 50px;
-            border: 3px solid black;
-            border-radius: 5px;
-            font-size: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
+           width: 100px;
+           height: 90px;
+           border: 3px solid black;
+           border-radius: 80%; 
+           font-size: 50px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           background-color: white;
         }
         .answer {
             display: flex;
@@ -44,12 +49,13 @@
             width: 150px;
             height: 40px;
             font-size: 18px;
+            margin-top: 10px;
         }
     </style>
 </head>
-<body onload="setupGame()">
+<body onclick="setUpGame()">
     <h1>Wordle</h1>
-    <p id="attempts">Attempts left: 5</p>
+    <h2 id="attempts">Attempts left: 5</h2>
 
     <div id="r-0" class="box">
         <div id="r-0-0"></div>
@@ -89,6 +95,7 @@
 
     <div class="answer">
         <button onclick="checkWord()">Enter a Word</button>
+        <button id="play-again" onclick="restartGame()" style="display: none;">P1@Y 4gAyNzzz</button>
     </div>
 
     <script src="wordle.js"></script>
